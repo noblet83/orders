@@ -29,7 +29,7 @@
             <span class="icon-bar"></span>
 
             <!-- Need to fix this with document root -->
-            </button> <a href="/inventory/main/index.php" class="navbar-brand">Home</a>
+            </button> <a href="/orders/main/index.php" class="navbar-brand">Home</a>
 
         </div>
         <nav class="collapse navbar-collapse pull-right" role="navigation">

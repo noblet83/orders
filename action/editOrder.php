@@ -60,7 +60,7 @@
 
   <div class="form-group">
     <label for="order_id">Order ID</label>
-    <input type="text" id="order_id" name="order_id" class="form-control" value="<?php echo $orders['order_id']; ?>">
+    <input type="text" id="order_id" name="order_id" class="form-control" value="<?php echo $orders['order_id']; ?>" readonly>
   </div>
   
   <div class="form-group">
@@ -69,22 +69,31 @@
   </div>
   <div class="form-group">
     <label for="order_status">Order Status</label>
-    <input type="number" name="order_status" id="order_status" class="form-control" value="<?php echo $orders['order_status']; ?>">
+    <select name="order_status" id="order_status" class="form-control">
+      <option value="ordered">Ordered</option>
+      <option value="recieved">Recieved</option>
+      <option value="onHold">On Hold</option>
+    </select>
   </div>
 
   <div class="form-group">
   <label for="order_quantity">Order Quantity</label>
-    <input type="number" name="order_quantity" id="order_quantity" class="form-control" value="<?php echo $orders['order_quantity']; ?>"></textarea>
+    <input type="number" name="order_quantity" id="order_quantity" class="form-control" value="<?php echo $orders['order_quantity']; ?>">
   </div>
   <div class="form-group">
     <label for="item_name">Item Name</label>
     <input type="text" class="form-control" name="item_name" id="item_name" value="<?php echo $orders['item_name']; ?>">
   </div>
 
-
   <div class="form-group">
-    <label for="editor1">Order Notes</label>
-    <textarea name="order_note" id="editor1" class="form-control" rows="5" cols="40"><?php echo $orders['order_note'];?></textarea>
+    <label for="editor1">Add Note</label>
+    <textarea name="order_note" id="editor1" class="form-control" rows="5" cols="40">
+        <?php echo $orders['order_note'];?>
+        <br>
+        <hr>
+        <?php echo '<time datetime="'.date('c').'">'.date('m -d - Y').'</time>';?> - 
+
+    </textarea>
       <script>
         CKEDITOR.replace('editor1');
       </script>
